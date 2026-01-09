@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="shortcut icon" href="favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Design With Reb</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -109,6 +112,78 @@
       border-radius: 5px;
       font-size: 1rem;
     }
+
+    .accreditation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 50px;
+}
+
+.accreditation-card {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  border-radius: 12px;
+  overflow: visible;
+  transition: 0.3s ease;
+}
+
+.accreditation-card:hover {
+  transform: translateY(-6px);
+}
+
+.acc-img {
+  width: 100%;
+  height: 180px;
+  background-size: contain;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 12px;
+  padding: 20px;
+  filter: brightness(0.9);
+  border: 1px solid #eee;
+}
+
+/* Overlapping block (post-it style) */
+.acc-block {
+  position: absolute;
+  bottom: -18px;
+  left: 20px;
+  background: #b89b7d; /* brand yellow post-it */
+  padding: 14px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .acc-block {
+    bottom: -12px;
+    left: 15px;
+    padding: 12px 18px;
+  }
+}
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .slides { height: 360px; }
+  .sl-prev, .sl-next { width:48px; height:48px; font-size:24px; }
+  .thumb img { height:40px; }
+}
+
+@media (max-width: 600px) {
+  .slides { height: 260px; }
+  .thumb { min-width: 60px; }
+  .thumb img { height:36px; }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .slide, .sl-prev, .sl-next, .thumb { transition: none !important; }
+}
     .footer {
       text-align: center; padding: 2rem; background: var(--color-footer);
       font-size: 0.9rem; color: var(--color-text);
@@ -140,6 +215,7 @@
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#packages">Packages</a></li>
+      <li><a href="#section accreditations">Portfolio</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="theme-toggle" onclick="toggleTheme()">☀️/🌚</button>
@@ -195,6 +271,39 @@
       <a class="btn-primary" href="#contact">Get in Touch </a>
     </div>
   </section>
+
+  <section id="section accreditations">
+  <div class="container">
+    <h2>A Selection of My Work</h2>
+
+    <div class="accreditation-grid">
+
+     
+      <a href="https://stainesfarmshop.com/" target="_blank" class="accreditation-card">
+        <div class="acc-img" style="background-image:url('465741459_1171357217753594_8926536926219245897_n.jpg');"></div>
+        <div class="acc-block">Staines Farm Shop</div>
+      </a>
+
+      
+      <a href="https://with-reb.github.io/SCE-Test/" target="_blank" class="accreditation-card">
+        <div class="acc-img" style="background-image:url('logo1 copy.png');"></div>
+        <div class="acc-block">Steve Charles Electrical Ltd</div>
+      </a>
+
+     
+      <a href="https://ngbrands.shop/" target="_blank" class="accreditation-card">
+        <div class="acc-img" style="background-image:url('NG8.png');"></div>
+        <div class="acc-block">NG Brands</div>
+      </a>
+
+      <a href="https://with-reb.github.io/Owens-Male-Grooming/" target="_blank" class="accreditation-card">
+        <div class="acc-img" style="background-image:url('Owen.png');"></div>
+        <div class="acc-block">Owen's Male Grooming</div>
+      </a>
+
+   </div>
+  </div>
+</section>
 
   <section id="contact" data-aos="fade-up">
     <h2>Contact Me</h2>
