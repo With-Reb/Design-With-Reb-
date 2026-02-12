@@ -61,12 +61,6 @@
   padding-top: 90px; /* space for the fixed nav */
      }
     
-    nav {
-      position: fixed; width: 100%; padding: 1rem 2rem;
-      display: flex; justify-content: space-between; align-items: center;
-      background: var(--color-nav); backdrop-filter: blur(6px);
-      z-index: 10;
-    }
     .main-nav {
   position: fixed;
   top: 0;
@@ -75,6 +69,80 @@
   background: var(--color-nav);
   backdrop-filter: blur(6px);
   z-index: 1000;
+}
+.main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-nav);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav-logo img {
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #1f1f1f;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  color: var(--color-accent);
+}
+
+/* Hamburger */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--color-nav);
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
 }
 
 .nav-inner {
@@ -253,20 +321,6 @@
   padding: 0;
 }
 
-.site-header {
-  position: sticky;
-  top: 0;
-  background: #b89b7d;
-  z-index: 1000;
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-}
-
 /* TOGGLE BUTTON */
 .nav-toggle {
   background: none;
@@ -276,17 +330,7 @@
   cursor: pointer;
 }
 
-/* NAV MENU */
-.nav-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background: #f8f5f1;
-  display: none;
-  flex-direction: column;
-  text-align: center;
-}
+
 
 .nav-menu li {
   border-top: 1px solid rgba(255,255,255,0.1);
@@ -297,11 +341,6 @@
   padding: 1rem;
   color: #fff;
   text-decoration: none;
-}
-
-/* SHOW MENU */
-.nav-menu.active {
-  display: flex;
 }
 
 /* DESKTOP */
@@ -396,22 +435,27 @@
 </script>
 <body>
   <nav class="main-nav">
-    <button class="theme-toggle" onclick="toggleTheme()">☀️/🌚</button>
   <div class="nav-inner">
-  </div>
-    <button class="nav-toggle" aria-label="Toggle navigation">
+
+    <div class="nav-logo">
+      <img src="IMG_9217.PNG" alt="Design With Reb Logo">
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
       ☰
     </button>
 
-      <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#packages">Packages</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    </div>
-</nav>
 
+    <button class="theme-toggle" onclick="toggleTheme()">☀️/🌚</button>
+
+  </div>
+</nav>
   <header class="hero">
     <div class="content" data-aos="fade-up">
     <div class="logo"><img src="IMG_9217.PNG" alt="Design With Reb Logo"></div>
@@ -539,5 +583,20 @@
       }
     }
   </script>
+  <script>
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  navToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+  });
+
+  // Close menu when clicking a link (mobile)
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+    });
+  });
+</script>
 </body>
 </html>
