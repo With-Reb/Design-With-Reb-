@@ -58,13 +58,56 @@
       color: var(--color-text);
       line-height: 1.6;
       transition: background 0.4s, color 0.4s;
-    }
+  padding-top: 90px; /* space for the fixed nav */
+     }
+    
     nav {
       position: fixed; width: 100%; padding: 1rem 2rem;
       display: flex; justify-content: space-between; align-items: center;
       background: var(--color-nav); backdrop-filter: blur(6px);
       z-index: 10;
     }
+    .main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-nav);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo img {
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #1f1f1f;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--color-accent);
+}
     header .logo img {
       height: 170px;
       border-radius: 50%;
@@ -204,6 +247,82 @@
   .thumb { min-width: 60px; }
   .thumb img { height:36px; }
 }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background: #b89b7d;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+/* TOGGLE BUTTON */
+.nav-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* NAV MENU */
+.nav-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #f8f5f1;
+  display: none;
+  flex-direction: column;
+  text-align: center;
+}
+
+.nav-menu li {
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav-menu a {
+  display: block;
+  padding: 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* SHOW MENU */
+.nav-menu.active {
+  display: flex;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-menu {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    gap: 2rem;
+    background: none;
+  }
+
+  .nav-menu li {
+    border: none;
+  }
+}
 
 /* Respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
@@ -217,7 +336,7 @@
     .footer a:hover { text-decoration: underline; }
     .picture {
       height: auto;
-      max-height: 80px;
+      max-height: 50px;
       width: auto;
       max-width: 90%;
       margin-bottom: 1rem;
@@ -276,16 +395,22 @@
   gtag('config', 'G-RHWGEQSG0D');
 </script>
 <body>
-  <nav>
-   
-    <ul>
+  <nav class="main-nav">
+    <button class="theme-toggle" onclick="toggleTheme()">☀️/🌚</button>
+  <div class="nav-inner">
+  </div>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      ☰
+    </button>
+
+      <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#packages">Packages</a></li>
-      <li><a href="#section accreditations">Portfolio</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="theme-toggle" onclick="toggleTheme()">☀️/🌚</button>
-  </nav>
+    </div>
+</nav>
 
   <header class="hero">
     <div class="content" data-aos="fade-up">
@@ -338,14 +463,13 @@
       <a class="btn-primary" href="#contact">Get in Touch </a>
     </div>
      <div class="package-card">
-      <h3>Shopify Development</h3>
+      <h3>Shopify Package</h3>
       <p> I design and build Shopify websites that are easy to manage and built to sell.</p>
       <a class="btn-primary" href="#contact">Get in Touch </a>
     </div>
   </section>
 
-  <section id="section accreditations">
-  <div class="container">
+  <section id="portfolio" data-aos="fade-up">
     <h2>A Selection of My Work</h2>
 
     <div class="accreditation-grid">
@@ -353,24 +477,24 @@
      
       <a href="https://stainesfarmshop.com/" target="_blank" class="accreditation-card">
         <div class="acc-img" style="background-image:url('465741459_1171357217753594_8926536926219245897_n.jpg');"></div>
-        <div class="acc-block">Staines Farm Shop</div>
+        <div class="btn-primary">Staines Farm Shop</div>
       </a>
 
       
       <a href="https://electricianstalbans.co.uk/" target="_blank" class="accreditation-card">
         <div class="acc-img" style="background-image:url('logo1 copy.png');"></div>
-        <div class="acc-block">Steve Charles Electrical Ltd</div>
+        <div class="btn-primary">Steve Charles Electrical Ltd</div>
       </a>
 
      
       <a href="https://ngbrands.shop/" target="_blank" class="accreditation-card">
         <div class="acc-img" style="background-image:url('NG8.png');"></div>
-        <div class="acc-block">NG Brands</div>
+        <div class="btn-primary">NG Brands</div>
       </a>
 
       <a href="https://owensmalegrooming.com/" target="_blank" class="accreditation-card">
         <div class="acc-img" style="background-image:url('Owen.png');"></div>
-        <div class="acc-block">Owen's Male Grooming</div>
+        <div class="btn-primary">Owen's Male Grooming</div>
       </a>
 
    </div>
@@ -390,7 +514,8 @@
         <option value="email hosting">Email Hosting Package</option>
         <option value="photography">Photography Package</option>
          <option value="it support">Google Business Assistance Package</option>
-        
+          <option value="shopify">Shopify Development Package</option>
+
       </select>
       <textarea name="message" rows="4" placeholder="Your Message"></textarea>
       <button type="submit" class="btn-primary">Send Message</button>
