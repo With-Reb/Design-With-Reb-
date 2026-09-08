@@ -309,6 +309,47 @@
     
     /* ===== NAV BAR ===== */
 
+    .ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+  .about-slider {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    text-align: center;
+  }
+
+  .about-slider .slide {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+
+  .about-slider .slide.active {
+    display: block;
+    opacity: 1;
+  }
+
+  .slider-controls {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .slider-controls span {
+    cursor: pointer;
+    font-size: 28px;
+    padding: 8px 16px;
+    color: #333;
+    transition: 0.3s;
+  }
+
+  .slider-controls span:hover {
+    color: #000;
+  }
+  
 .main-nav {
   position: fixed;
   top: 0;
@@ -625,66 +666,126 @@
   
    </header>
 
-  <section id="about" data-aos="fade-up">
-    <h2>Who We Are</h2>
-    <p>Design With Reb is a digital operations and web consultancy studio specialising in Operations, IT Consultancy, Online Presence Management, and Business Support. The studio combines technical expertise with structured, practical problem‑solving to help businesses work smarter online.
-From streamlining internal processes to developing modern websites and managing digital visibility, Design With Reb delivers organised, reliable solutions that strengthen how businesses operate and present themselves. Every project is approached with clarity, efficiency, and a commitment to high‑quality results.
-</p>
-<div class="content" data-aos="fade-up"></div>
-<div class="logo"><img src="Reb.png" alt="Reb Logo"></div>
-  </section>
+ <section id="about" data-aos="fade-up">
+  <h2>Why Work With Us</h2>
 
-  <section id="packages" class="packages" data-aos="fade-up">
-    <div class="package-card">
-      <h3>Starter Package</h3>
-      <p>A clean, responsive site perfect for small businesses.</p>
-      <br>
-      <a class="btn-primary" href="#contact">Get in Touch</a>
+  <div class="about-slider">
+    <div class="slide active">
+      <strong>A unique blend of operational and digital expertise</strong>
+      <p>With experience in both business operations and modern web development, we create websites that not only look exceptional but also support smoother processes, clearer communication, and more efficient day‑to‑day operations.</p>
     </div>
-    <div class="package-card">
-      <h3>Advanced Package</h3>
-      <p>Includes dynamic features and custom design tailored to your brand.</p>
-      <a class="btn-primary" href="#contact">Get in Touch</a>
+
+    <div class="slide">
+      <strong>Clear, friendly, and transparent communication</strong>
+      <p>You’ll receive straightforward guidance, practical explanations, and a collaborative experience without jargon or unnecessary complexity, making every stage of the project feel easy and stress‑free.</p>
     </div>
-    <div class="package-card">
-      <h3>Elite Package</h3>
-      <p>A premium solution with full-stack integration and ongoing support.</p>
-      <a class="btn-primary" href="#contact">Get in Touch</a>
+
+    <div class="slide">
+      <strong>Tailored solutions for every business</strong>
+      <p>Every website, consultancy session, and support package is shaped around your goals, your brand, and the way you work. No templates, no generic approaches, everything is built with intention.</p>
     </div>
-     <div class="package-card">
-      <h3>Email Hosting Package</h3>
-      <p>Professional email hosting with custom domains, secure storage, and reliable support.</p>
-      <a class="btn-primary" href="#contact">Get in Touch</a>
+
+    <div class="slide">
+      <strong>A modern, clean, and intentional design aesthetic</strong>
+      <p>Our design style is warm, elegant, and user‑focused. We create websites that feel welcoming, professional, and effortless to navigate, helping your audience connect with your brand instantly.</p>
     </div>
-     <div class="package-card">
-      <h3>Photography Package</h3>
-      <p>High-quality photography tailored for your brand, optimised for stunning websites.</p>
-      <a class="btn-primary" href="#contact">Get in Touch</a>
+
+    <div class="slide">
+      <strong>Local, reliable support</strong>
+      <p>Based in Whitstable and working closely with small businesses across Kent and the UK, we offer a personal, dependable service, whether you need ongoing digital support or a one‑off project.</p>
     </div>
-     <div class="package-card">
-      <h3>Google Business Package</h3>
-      <p>Google Business assistance for improved visibility, reputation, and customer reach.</p>
-      <a class="btn-primary" href="#contact">Get in Touch </a>
-    </div>
-     <div class="package-card">
-      <h3>Shopify Package</h3>
-      <p> I design and build Shopify websites that are easy to manage and built to sell.</p>
-      <a class="btn-primary" href="#contact">Get in Touch </a>
-    </div>
-     <div class="package-card">
-      <h3>IT Consultancy</h3>
-      <p>IT consultancy, providing expert advice and solutions to optimise your technology infrastructure and enhance operational efficiency.</p>
-      <a class="btn-primary" href="#contact">Get in Touch </a>
-    </div>
-     <div class="package-card">
-      <h3>Operational Business Support</h3>
-      <p>Operational business support offering comprehensive assistance in streamlining processes, improving efficiency, and managing day-to-day operations to help your business thrive.</p>
-      <a class="btn-primary" href="#contact">Get in Touch </a>
-    </div>
-  </section>
+  </div>
+
+  <div class="slider-controls">
+    <span class="prev">&#10094;</span>
+    <span class="next">&#10095;</span>
+  </div>
+
+  <div class="logo">
+    <img src="Reb.png" alt="Reb Logo">
+  </div>
+</section>
+
+
+
+
+<
+
+ <section id="packages" class="packages" data-aos="fade-up">
+
+  <!-- WEBSITE PACKAGES -->
+  <div class="package-card">
+    <h3>Starter Website</h3>
+    <p>A clean, modern, mobile‑first website perfect for small businesses who need a professional online presence.</p>
+    <a class="btn-primary" href="#contact">Get in Touch</a>
+  </div>
+
+  <div class="package-card">
+    <h3>Bespoke Website Build</h3>
+    <p>A fully tailored website designed around your brand, content, and goals, including structure, layout, and UX improvements.</p>
+    <a class="btn-primary" href="#contact">Get in Touch</a>
+  </div>
+
+  <div class="package-card">
+    <h3>Website Refresh</h3>
+    <p>Modernising your existing site with improved design, clearer messaging, better structure, and updated content.</p>
+    <a class="btn-primary" href="#contact">Get in Touch</a>
+  </div>
+
+  <!-- SHOPIFY -->
+  <div class="package-card">
+    <h3>Shopify Website</h3>
+    <p>Beautiful, easy‑to‑manage Shopify stores built to sell, with clean layouts, product organisation, and essential integrations.</p>
+    <a class="btn-primary" href="#contact">Get in Touch</a>
+  </div>
+
+  <!-- ONLINE PRESENCE MANAGEMENT -->
+  <div class="package-card">
+    <h3>Online Presence Management</h3>
+    <p>Support with your website, Google Business Profile, content updates, and digital consistency across platforms.</p>
+    <a class="btn-primary" href="#contact">Get in Touch</a>
+  </div>
+
+  <!-- GOOGLE BUSINESS -->
+  <div class="package-card">
+    <h3>Google Business Setup & Optimisation</h3>
+    <p>Improve visibility, reputation, and customer reach with a fully optimised Google Business Profile.</p>
+    <a class="btn-primary" href="#contact">Get in Touch</a>
+  </div>
+
+  <!-- EMAIL HOSTING -->
+  <div class="package-card">
+    <h3>Email Hosting & Setup</h3>
+    <p>Professional email addresses, domain setup, DNS configuration, and ongoing support to keep everything running smoothly.</p>
+    <a class="btn-primary" href="#contact">Get in Touch</a>
+  </div>
+
+  <!-- IT CONSULTANCY -->
+  <div class="package-card">
+    <h3>IT Consultancy</h3>
+    <p>Clear, friendly guidance on tools, systems, hosting, software choices, integrations, and improving your digital setup.</p>
+    <a class="btn-primary" href="#contact">Get in Touch</a>
+  </div>
+
+  <!-- OPERATIONS SUPPORT -->
+  <div class="package-card">
+    <h3>Operational Business Support</h3>
+    <p>Streamlining processes, improving workflows, and helping your business run more efficiently behind the scenes.</p>
+    <a class="btn-primary" href="#contact">Get in Touch</a>
+  </div>
+
+  <!-- PHOTOGRAPHY -->
+  <div class="package-card">
+    <h3>Brand Photography</h3>
+    <p>Warm, clean photography tailored for your brand, perfect for websites, social media, and marketing materials.</p>
+    <a class="btn-primary" href="#contact">Get in Touch</a>
+  </div>
+
+</section>
+
 
   <section id="portfolio" data-aos="fade-up">
-    <h2>A Selection of My Work</h2>
+    <h2>A Selection of Our Work</h2>
 
     <div class="accreditation-grid">
 
@@ -718,31 +819,56 @@ From streamlining internal processes to developing modern websites and managing 
    </div>
   </div>
 </section>
+<section id="contact" data-aos="fade-up">
+  <h2>Contact Us</h2>
 
-  <section id="contact" data-aos="fade-up">
-    <h2>Contact Me</h2>
-    <form class="contact-form" action="https://formspree.io/f/mjkroykv" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <select name="package" required>
-        <option value="">Select a Package</option>
-        <option value="starter">Starter Package</option>
-        <option value="advanced">Advanced Package</option>
-        <option value="elite">Elite Package</option>
-        <option value="email hosting">Email Hosting Package</option>
-        <option value="photography">Photography Package</option>
-         <option value="it support">Google Business Assistance Package</option>
-          <option value="shopify">Shopify Development Package</option>
-           <option value="it consultancy">IT Consultancy</option>
-           <option value="operation business support">Operation Business Support</option>
+  <form class="contact-form" action="https://formspree.io/f/mjkroykv" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
 
-      </select>
-      <textarea name="message" rows="4" placeholder="Your Message"></textarea>
-      <button type="submit" class="btn-primary">Send Message</button>
-    </form>
-    <p><a href="https://www.instagram.com/design_with_reb/" target="_blank"><img src="91884934ea1c59f45b9a149ca396783c.png" alt="Instagram" class="picture"></a></p>
-    <p><a href="https://g.page/r/CXKRm7sSrVykEBM/review" target="_blank"><img src="67348c12add96322b9dbb6af280274ea.jpg" alt="Google Review" class="picture"></a></p>
-  </section>
+    <select name="package" required>
+      <option value="">Select a Service</option>
+
+      <!-- Website Services -->
+      <option value="starter-website">Starter Website</option>
+      <option value="bespoke-website">Bespoke Website Build</option>
+      <option value="website-refresh">Website Refresh</option>
+
+      <!-- Shopify -->
+      <option value="shopify-website">Shopify Website</option>
+
+      <!-- Online Presence -->
+      <option value="online-presence-management">Online Presence Management</option>
+      <option value="google-business-setup">Google Business Setup & Optimisation</option>
+
+      <!-- Email Hosting -->
+      <option value="email-hosting">Email Hosting & Setup</option>
+
+      <!-- Consultancy -->
+      <option value="it-consultancy">IT Consultancy</option>
+      <option value="operations-support">Operational Business Support</option>
+
+      <!-- Photography -->
+      <option value="brand-photography">Brand Photography</option>
+    </select>
+
+    <textarea name="message" rows="4" placeholder="Your Message"></textarea>
+    <button type="submit" class="btn-primary">Send Message</button>
+  </form>
+
+  <p>
+    <a href="https://www.instagram.com/design_with_reb/" target="_blank">
+      <img src="91884934ea1c59f45b9a149ca396783c.png" alt="Instagram" class="picture">
+    </a>
+  </p>
+
+  <p>
+    <a href="https://g.page/r/CXKRm7sSrVykEBM/review" target="_blank">
+      <img src="67348c12add96322b9dbb6af280274ea.jpg" alt="Google Review" class="picture">
+    </a>
+  </p>
+</section>
+
 
   <footer class="footer">
     © 2025 Design With Reb. All Rights Reserved. | <a href="https://www.instagram.com/design_with_reb/" target="_blank">Instagram</a>
@@ -774,6 +900,31 @@ From streamlining internal processes to developing modern websites and managing 
       navLinks.classList.remove("open");
     });
   });
+</script>
+<script>
+  const slides = document.querySelectorAll('.about-slider .slide');
+  let index = 0;
+
+  function showSlide(i) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[i].classList.add('active');
+  }
+
+  document.querySelector('.next').onclick = () => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  };
+
+  document.querySelector('.prev').onclick = () => {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+  };
+
+  // Auto-slide every 6 seconds
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }, 6000);
 </script>
 </body>
 </html>
