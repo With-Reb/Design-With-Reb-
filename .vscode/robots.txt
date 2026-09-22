@@ -1,8 +1,9 @@
 User-agent: *
-Disallow: /wp-admin/
+Allow: /
+
 Disallow: /cgi-bin/
 Disallow: /tmp/
 Disallow: /private/
-Allow: /wp-admin/admin-ajax.php
 
 Sitemap: https://designwithreb.com/sitemap.xml
+
